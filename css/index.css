@@ -12,7 +12,7 @@
 	width: 100%;
 	overflow: hidden;
 }
-/*¾íÖá*/
+/*ï¿½ï¿½ï¿½ï¿½*/
 .jztop {
 	background: url(../images/maintopbg.jpg) no-repeat;
 	width: 1034px;
@@ -25,7 +25,7 @@
 	margin: auto;
 	height: 14px;
 }
-/*ÎÄÕÂ*/
+/*ï¿½ï¿½ï¿½ï¿½*/
 .bloglist {
 	width: 620px;
 	overflow: hidden;
@@ -36,7 +36,7 @@
 	margin: 20px 0 10px 0;
 	color: #333;
 	font-size: 16px;
-	font-family: "Î¢ÈíÑÅºÚ";
+	font-family: "Î¢ï¿½ï¿½ï¿½Åºï¿½";
 }
 .bloglist figure {
 	float: left;
@@ -91,7 +91,7 @@ a.readmore {
 	padding-left: 40px;
 	margin: 0 0 10px 0
 }
-/* ¹Ø×¢ÎÒ */
+/* ï¿½ï¿½×¢ï¿½ï¿½ */
 .gzwm ul {
 	width: 100%;
 	overflow: hidden;
@@ -123,7 +123,7 @@ a.readmore {
 .gzwm li a:hover {
 	opacity: 0.6;
 }
-/*Í¼ÎÄÁÐ±í*/
+/*Í¼ï¿½ï¿½ï¿½Ð±ï¿½*/
 .tuwen {
 	width: 100%;
 	clear: both;
@@ -172,7 +172,7 @@ a.readmore {
 .tuwen li:hover {
 	background: #f4f3f3
 }
-/*ÅÅÐÐ*/
+/*ï¿½ï¿½ï¿½ï¿½*/
 .rank li {
 	height: 25px;
 	line-height: 25px;
@@ -195,7 +195,7 @@ a.readmore {
 .ph {
 	overflow: hidden
 }
-/*Ê×Ò³ÓÒ²à¹ã¸æ 300*/
+/*ï¿½ï¿½Ò³ï¿½Ò²ï¿½ï¿½ï¿½ 300*/
 .ad {
 	width: 300px;
 	overflow: hidden;
@@ -203,4 +203,11 @@ a.readmore {
 }
 .ad img {
 	width: 300px;
+}
+.contenttop {
+	position:relative;
+}
+.logo {
+	top:34px;
+	right: 14px;
 }
