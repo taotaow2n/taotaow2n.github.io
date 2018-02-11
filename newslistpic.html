@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			header { 
+				height:50px;
+				text-align: center;
+				font-size: 20px;
+				font-weight: 800;
+				background: #ccc;
+				line-height: 50px;
+			}
+			section {
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>如何利用hexo和github创建自己的个人博客呢？</header>
+		<section>
+		零基础免费搭建个人博客-hexo+github（参考了别人的文章，也就帮忙宣传下）,下面主要说说我个人的一些理解，以及遇到的坑。<br>
+进入正题<br>
+利用 hexo + github 搭建博客大概如下几步：<br>
+-node.js 的安装和准备（本地配置）<br>
+-Git 的安装和准备（远程空间配置）<br>
+-github 账户配置（部署和发布）<br>
+那么我的第一步是安装 node.js 咯？不！我第一步是花钱买了个域名。相信我，当你花完钱之后，在接下来的步骤中遇到问题，你解决问题的信念会更强，并且花钱越多，离成功会越近。所以买个.com/.net 的域名，你就成功了一半。<br>
+
+不买域名行不行？当然可以。买域名是为了更好的装逼。
+nodo.js 下载与安装<br>
+安装就不用多说了，跟安装普通软件没有区别，可以一路按提示Next。完成之后，打开命令行窗口 WIN + R，输入如下命令：<br>
+node -v    <br>
+npm -v    <br>
+出现如下结果说明安装成功：<br>
+ 
+安装 Hexo<br>
+在命令行输入如下命令:<br>
+$ npm install -g hexo-cli<br>
+由于众所周知的原因,可能你执行这条命令会报错，如果你不会调整姿势上网，可以使用淘宝 npm 镜像，执行如下命令即可：
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org<br>
+之后很多 npm 命令可以使用 cnpm 代替。执行下面命令即可安装 Hexo :<br>
+$ cnpm install -g hexo-cli<br>
+可能出现一些 WARN ,可以不用理会，然后执行：<br>
+$ cnpm install hexo --save<br>
+输入 $ hexo -v命令，出现下面所示的版本信息，则说明安装成功<br>
+ 
+本地搭建博客<br>
+-初始化 hexo<br>
+新建一个文件夹，这个文件夹即为以后博客的文件存放路径。打开命令行，cd 到该文件夹，执行<br>
+hexo init<br>
+-生成静态文件，执行：<br>
+hexo g<br>
+OK,本地的博客搭建好了，下面可以执行 hexo s进行本地调试，执行完之后，打开浏览器，输入http://localhost:4000,可以看到如下页面<br>
+ 
+那么恭喜你，本地博客搭建已经完成了。下一步就是部署到远程服务器上。<br>
+将本地博客部署到远程服务器端<br>
+本地博客搭建好了，我们还需要将它部署到远程服务器上。因为博客主要都是一些静态的页面，不涉及与后台的数据传送，所以我们可以利用 Github 上提供的一个免费空间，那么，首先需要有一个 Github 账号，相信同行都有，非猿类请登录官网注册。做法是建立一个仓库，将文件上传到该仓库即可，这个仓库的起名要注意，为 yourname.github.io，yourname与你的注册用户名一致,比如的github用户名是 zhangsan，那么起名就为 zhangsan.github.io ,这个就是你博客的域名了。<br>
+下面还需要做相应的配置，在你项目的文件夹下，找到 _config.yml 文件，注意是修改整个项目的配置文件，不是主题文件夹下的配置文件。打开文件修改配置如下：<br>
+deploy:  <br>  
+  type: git   <br>  
+  repo: <repository url>     <br> 
+  branch: [branch]    <br>  
+  message: [message]      <br>
+ 
+参数描述：<br>
+repo： 库（Repository）地址<br>
+branch： 分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。<br>
+message: 自定义提交信息 (默认为 Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}<br>
+最后通过生成静态文件：<br>
+hexo g<br>
+部署到github:<br>
+hexo d<br>
+以上两句可以合并成一句 hexo g -d或者hexo d -g<br>
+下面是知识点：v
+1.如果你跟我一样用的是 Node.js 是最新的版本，这里 type ,要写 git，网上一些文章上写的 github ,亲测，不可行。后来上 hexo 官网查看，证实为 git。 github 可能是以前比较老的版本中的推荐的配置。<br>
+2.如果没有配置好 github 的 SSH Key, 每次提交代码的时时候都是要求输入github 用户名和密码。假设你已经将 SSH Key 添加到 github 上了（具体操作网上一大把），你仍然有可能每次提交代码都需要输入用户名和密码。原因是， repo 地址，你写的是<br>
+https://github.com/username/username.github.io.gitv
+可以将其替换为<br>
+git@github.com:yourname/yourname.github.io.git<br>
+为博客更改域名v
+为了更好的装逼，决不能满足于别人通过 yourname.github.io 去访问你的博客，所以下面简单介绍如何更改自己的博客域名。开头提到，域名是要花钱买的，以我自己的为例，在万网买的，国内域名还需要实名认证，登录万网，进入控制台，然后一步步按流程来就OK了。最后进行域名解析：<br>
+记录值，你需要 ping 一下你的 github 地址，输入对应的值.<br>
+ 
+最后还有一步，在你的本地博客 source 目录下，新建一个文件，命名为 CNAME ，注意该文件没有后缀，内容为你购买的域名。然后执行 hexo d -g。<br>
+<h2>我所遇到的上传的坑</h2>
+<p>
+	Git push时，git commit –m 后面要加上值<br/>
+如果你在执行$ hexo deloy,如果提示 ERROR Deployer not found: git，那说明你没有安装hexo-deployer-git依赖包，<br/>进入F:\Hexo\node_modules发现真的没有hexo-deployer-git，不用担心，只需要输入下面命令创建hexo-deployer-git依赖包，<br/>然后再执行hexo deploy就能上传成功了<br/>
+$ npm install hexo-deployer-git --save
+</p>
+
+
+
+		</section>
+	</body>
+</html>
