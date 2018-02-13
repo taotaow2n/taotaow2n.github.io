@@ -104,13 +104,17 @@ Jetty是一个优秀的Web服务器，最大的特点是可嵌入应用程序，
     <span class="tag" style="color:rgb(0,0,128);">&lt;<span class="title">param-value</span>&gt;</span>true<span class="tag" style="color:rgb(0,0,128);">&lt;/<span class="title">param-value</span>&gt;</span>
 <span class="tag" style="color:rgb(0,0,128);">&lt;/<span class="title">init-param</span>&gt;</span>
 </code></pre>
-<p style="margin-top:15px;margin-bottom:15px;white-space:pre-wrap;color:rgb(102,102,102);font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;">
-将param-value从true改为false即可。可以直接修改jar包内的这个文件，但是修改发行包毕竟不好，可以将此文件复制一份，在启动Jetty时用自己的这个webdefault.xml覆盖Jetty的设置即可。加上：</p>
-<pre style="margin-top:15px;margin-bottom:15px;padding:10px;background-color:rgb(250,250,250);line-height:18px;font-family:Consolas, monospace, serif;color:rgb(68,68,68);overflow:auto;border:1px solid rgb(221,221,221);white-space:pre-wrap;"><code class="javascript">WebAppContext webapp = <span class="keyword" style="color:rgb(51,51,51);font-weight:bold;">new</span> WebAppContext();
-webapp.setDefaultsDescriptor(<span class="string" style="color:rgb(221,17,68);">"./webdefault.xml"</span>);
-</code></pre>
-<p style="margin-top:15px;margin-bottom:15px;white-space:pre-wrap;color:rgb(102,102,102);font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:14px;line-height:20px;">
-重新启动后问题解决。</p>
+<p>还是得通过配置web.xml解决</p>
+
+
+	<!-- 解决jetty插件无法修改html\js页面 -->
+	<p>
+		&lt;context-param&gt;<br/>
+    	&lt;param-name&gt;org.eclipse.jetty.servlet.Default.useFileMappedBuffer&lt;/param-name&gt;<br/>
+    	&lt;param-value&gt;false&lt;/param-value&gt;<br/>
+		&lt;/context-param&gt;
+	</p>
+	
 <p style="color: red;">要更改使用的webdefault.xml</p>
 
 		</section>
