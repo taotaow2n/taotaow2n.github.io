@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云云我爱你</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="icon" href="images/jacky/favicon.ico" type="image/x-icon"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+			width: 100%;
+			height: 100%;
+            background: url("images/jacky/love.jpg") repeat;
+            background-size:100%;
+            overflow: hidden;
+        }
+        ul{
+            width: 150px;
+            height: 150px;
+            /*background-color: red;*/
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            margin-left:-75px;
+            transform-style: preserve-3d;
+            /*transform: rotateX(-10deg);*/
+            animation: sport 6s linear 0s infinite normal;
+        }
+		p{
+		    width: 400px;
+		    height: 200px;
+		    /*background-color: red;*/
+		    position: absolute;
+			font-family:"楷体";
+		    top: 115px;
+		    left: 50%;
+		    margin-left:-185px;
+			font-size: 39px;
+			color: #731336;
+		}
+        ul li{
+            list-style: none;
+            width: 150px;
+            height: 150px;
+            font-size: 60px;
+            text-align: center;
+            line-height: 150px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: black;
+        }
+        ul li:nth-child(1){
+            transform: rotateY(60deg) translateZ(150px);
+        }
+        ul li:nth-child(2){
+            transform: rotateY(120deg) translateZ(150px);
+        }
+        ul li:nth-child(3){
+            transform: rotateY(180deg) translateZ(150px);
+        }
+        ul li:nth-child(4){
+            transform: rotateY(240deg) translateZ(150px);
+        }
+        ul li:nth-child(5){
+            transform: rotateY(300deg) translateZ(150px);
+        }
+        ul li:nth-child(6){
+            transform: rotateY(360deg) translateZ(150px);
+        }
+		ul li:nth-child(7){
+		    list-style: none;
+		    width: 123px;
+		    height: 162px;
+		    font-size: 60px;
+		    text-align: center;
+		    line-height: 150px;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    background-color: black;
+		}
+        ul li img{
+            width: 150px;
+            height: 150px;
+            border: 5px solid skyblue;
+            box-sizing: border-box;
+        }
+		ul li:nth-child(7) img{
+		    width: 123px;
+		    height: 162px;
+		    border: 5px solid skyblue;
+		    box-sizing: border-box;
+		}
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li img{
+            opacity: 0.5;
+        }
+        ul li:hover img{
+            opacity: 1;
+        }
+        @keyframes sport {
+            from{
+                transform: rotateX(-25deg) rotateY(0deg);
+            }
+            to{
+                transform: rotateX(-25deg) rotateY(360deg);
+            }
+        }
+        .heart,.heart1,.heart2,.heart3,.heart4,.heart5,.heart6{
+            /* width: 173px;
+            height: 157px; */
+			width: 50px;
+			height: 47px;
+            position: fixed;
+            left: 100px;
+            bottom: 100px;
+			opacity: 0;
+            animation: move 3s linear 0s infinite normal;
+        }
+		.heart1 { 
+			left: 200px;
+			bottom: 150px;
+			animation: move 7s linear 0s infinite normal;
+		}
+		.heart2 { 
+			left: 100px;
+			bottom: 200px;
+			animation: move 4s linear 0s infinite normal;
+		}
+		.heart3 { 
+			left: 190px;
+			bottom: 300px;
+			animation: move 8s linear 0s infinite normal;
+		}
+		.heart4 { 
+			left: 100px;
+			bottom: 300px;
+			animation: move 5s linear 0s infinite normal;
+		}
+		.heart5 { 
+			left: 170px;
+			bottom: 200px;
+			animation: move 3s linear 0s infinite normal;
+		}
+		.heart6 { 
+			left: 150px;
+			bottom: 150px;
+			animation: move 6s linear 0s infinite normal;
+		}
+        @keyframes move {
+			 0%{
+			     width: 50px;
+			     height: 47px;
+			     opacity: 1;
+			 }
+			 /* 20%{
+			     width: 70px;
+			     height: 63px;
+			     opacity: 1;
+			 }
+			 40%{
+			     width: 100px;
+			     height: 90px;
+			     opacity: 1;
+			 } */
+			 60%{
+			     width: 173px;
+			     height: 157px;
+			     opacity: 0;
+			 }
+			 /* 80%{
+			     width: 100px;
+			    height: 90px;
+			     opacity: 1;
+			 }
+			 100%{
+			     width: 50px;
+			     height: 47px;
+			 } */
+           /* 0%{
+                left: 100px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            20%{
+                left: 300px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            40%{
+                left: 500px;
+                bottom: 500px;
+                opacity: 1;
+            }
+            60%{
+                left: 500px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            80%{
+                left: 500px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            100%{
+                left: 800px;
+                bottom: -200px;
+            } */
+        }
+    </style>
+</head>
+<body>
+	<p>亲爱的，情人节快乐！</p>
+<ul>
+    <li><img src="images/jacky/love1.jpg" alt=""></li>
+    <li><img src="images/jacky/love2.jpg" alt=""></li>
+    <li><img src="images/jacky/love3.jpg" alt=""></li>
+    <li><img src="images/jacky/love4.jpg" alt=""></li>
+    <li><img src="images/jacky/love5.jpg" alt=""></li>
+    <li><img src="images/jacky/love6.jpg" alt=""></li>
+	<li><img src="images/jacky/mylove.jpg" alt=""></li>
+</ul>
+<img src="images/jacky/xin.png" class="heart">
+<img src="images/jacky/xin.png" class="heart1">
+<img src="images/jacky/xin.png" class="heart2">
+<img src="images/jacky/xin.png" class="heart3">
+<img src="images/jacky/xin.png" class="heart4">
+<img src="images/jacky/xin.png" class="heart5">
+<img src="images/jacky/xin.png" class="heart6">
+<audio id="vd" src="images/jacky/music.mp3" autoplay="autoplay" loop="loop"></audio>
+</body>
+<script type="text/javascript">
+// 	function toggleSound() {
+//             var music = document.getElementById("vd");//获取ID  
+//                 console.log(music);
+//                 console.log(music.paused);
+//             if (music.paused) { //判读是否播放  
+//                 music.paused=false;
+//                 music.play(); //没有就播放 
+//             }  
+//             
+//         }
+// 
+// setInterval("toggleSound()",1);
+</script>
+</html>
