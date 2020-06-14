@@ -35,9 +35,8 @@
             height: 10px;
             /*background-color: red;*/
             position: absolute;
-            bottom: 200px;
+            bottom: 50%;
             left: 50%;
-            margin-left:-75px;
             transform-style: preserve-3d;
             /*transform: rotateX(-10deg);*/
             animation: sport 20s linear 0s infinite normal;
@@ -46,42 +45,8 @@
 		    list-style: none;
 		    width: 2px;
 		    height: 2px;
-		    text-align: center;
 		    position: absolute;
-		    left: 0;
-		    top: 0;
-		    background-color: deepskyblue;
 			border-radius: 1px;
-		}
-		ul li:nth-child(1){
-		    transform: rotateY(60deg) translateZ(200px);
-		}
-		ul li:nth-child(2){
-		    transform: rotateY(120deg) translateZ(200px);
-		}
-		ul li:nth-child(3){
-		    transform: rotateY(180deg) translateZ(200px);
-		}
-		ul li:nth-child(4){
-		    transform: rotateY(240deg) translateZ(200px);
-		}
-		ul li:nth-child(5){
-		    transform: rotateY(300deg) translateZ(200px);
-		}
-		ul li:nth-child(6){
-		    transform: rotateY(360deg) translateZ(200px);
-		}
-		ul li:nth-child(7){
-		    list-style: none;
-		    width: 1px;
-		    height: 1px;
-		    font-size: 60px;
-		    text-align: center;
-		    line-height: 200px;
-		    position: absolute;
-		    left: 0;
-		    top: 0;
-		    background-color: black;
 		}
 		@keyframes sport {
 		    from{
@@ -115,9 +80,17 @@
 		</ul>
 	</body>
 	<script type="text/javascript">
+			var arr = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'];
 		$.each($("ul li"),function(i,n)  {
-			$(n).css('transform','rotateY('+1000*Math.random()*Math.random()+'deg'+') translateZ('+1500*Math.random()+'px'+')');
-			$(n).css('background','#'+'aa'+parseInt(10*Math.random())+parseInt(10*Math.random())+'ed');
+			var a = arr[parseInt(16*Math.random())];
+			var b = arr[parseInt(16*Math.random())];
+			var c = 3;
+			var d = arr[parseInt(16*Math.random())];
+			var e = 'e';
+			var f = arr[parseInt(16*Math.random())];
+			deg = i*[10*Math.random()]
+			$(n).css('transform','rotateY('+deg+'deg'+') translateZ('+1500*Math.random()+'px'+')');
+			$(n).css('background','#'+a+b+c+d+e+f);
 		})
 	</script>
 </html>
