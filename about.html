@@ -20,4 +20,12 @@
 			下面是我的个人介绍
 		</section>
 	</body>
+	<script src='http://localhost:18000/CLodopfuncs.js?name=CLODOPA'></script>
+	<script>
+		  var strHTML=document.getElementsByTagName("html")[0].innerHTML;
+		  LODOP.PRINT_INITA(1,1,770,660,"测试预览功能");
+		  LODOP.ADD_PRINT_TEXT(10,60,300,200,"这是测试的纯文本，下面是超文本:");
+		  LODOP.ADD_PRINT_HTM(30,5,"100%","80%",strHTML);
+		  LODOP.PREVIEW();
+	</script>
 </html>
